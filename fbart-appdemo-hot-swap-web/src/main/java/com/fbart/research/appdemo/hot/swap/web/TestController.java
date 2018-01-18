@@ -16,8 +16,6 @@ import java.util.Map;
 public class TestController {
     @Autowired
     private TestService testService;
-    @Autowired
-    private ApplicationContext applicationContext;
     /**
      * 刷新
      * @return
@@ -26,12 +24,8 @@ public class TestController {
     @ResponseBody
     public Map<String, Object> refresh(HttpServletRequest request) {
         HotswapUtil.swap2();
-        System.out.println(testService);
-        System.out.println(applicationContext);
 
-        TestService testService1 = new TestService();
-
-        String dealResult = testService1.deal("heihei");
+        String dealResult = testService.deal("heihei");
         System.out.println(dealResult);
 
         return new HashMap<>();

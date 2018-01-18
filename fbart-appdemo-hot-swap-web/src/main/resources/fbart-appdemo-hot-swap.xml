@@ -5,8 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <context:annotation-config/>
 
     <bean class="com.fbart.research.appdemo.hot.swap.web.TestController"/>
-    <bean id="testService" class="com.fbart.research.appdemo.hot.swap.TestService"/>
+    <bean class="com.fbart.research.appdemo.hot.swap.TestService"/>
     <import resource="classpath:fbart-appdemo-hot-swap-mvc.xml"/>
 </beans>
