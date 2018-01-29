@@ -47,4 +47,20 @@ public class HotswapUtil {
             e.printStackTrace();
         }
     }
+
+    public static void swap3() {
+        try {
+            URL url = new File(SWAP_CLASSES_URL).toURI().toURL();
+            ClassLoader contextClassLoader = URLClassLoader.newInstance(new URL[]{url});
+            Class<?> loadedClass = contextClassLoader.loadClass("com.fbart.research.Employee");
+            Object instance = loadedClass.newInstance();
+            Method declaredMethod = loadedClass.getDeclaredMethod("say", String.class);
+
+            String str = (String) declaredMethod.invoke(instance, "Tom");
+            System.out.println(str);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

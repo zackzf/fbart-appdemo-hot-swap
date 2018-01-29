@@ -23,7 +23,7 @@ public class TestController {
     @RequestMapping("/refresh")
     @ResponseBody
     public Map<String, Object> refresh(HttpServletRequest request) {
-        HotswapUtil.swap2();
+        HotswapUtil.swap3();
 
         String dealResult = testService.deal("heihei");
         System.out.println(dealResult);
